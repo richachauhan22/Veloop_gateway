@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import "./style.css";
+import "../style.css";
 import GiveawayHero from "./components/GiveawayHero";
 import GiveawayStats from "./components/GiveawayStats/GiveawayStats";
 import PrizeCards from "./components/PrizeCards/PrizeCards";
@@ -24,8 +24,8 @@ function Home() {
       <WinnersTabs />
       <TrustRulesFAQ />
 
-      <main style={{ padding: "60px 6%", backgroundColor: "black" }}>
-        <h1>VELOOP GIVEAWAYS</h1>
+      <main style={{ padding: "20px 3%", backgroundColor: "pink", textAlign: "center" ,fontSize:"15px"}}>
+        <h6>VELOOP GIVEAWAYS</h6>
       </main>
     </>
   );
@@ -38,7 +38,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/giveaway/:id" element={<GiveawayDetails />} />
+        <Route path="/prize/:id" element={<GiveawayDetails />} />
       </Routes>
     </BrowserRouter>
   );

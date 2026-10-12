@@ -1,0 +1,104 @@
+.section {
+  margin: 20px 6%;
+}
+
+.container {
+  padding: 30px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #24163f;
+  border-radius: 16px;
+}
+
+.left {
+  color: white;
+}
+
+.label {
+  color: #c8b0ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.left h2 {
+  margin: 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.left p {
+  margin: 0;
+  color: #cfc7dc;
+  font-size: 13px;
+}
+
+.timer {
+  display: flex;
+  gap: 10px;
+}
+
+.timeBox {
+  min-width: 75px;
+  padding: 12px 10px;
+  text-align: center;
+  background: #342451;
+  border: 1px solid #49346b;
+  border-radius: 9px;
+}
+
+.timeBox strong {
+  display: block;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.timeBox span {
+  color: #bdb1d0;
+  font-size: 10px;
+}
+
+.endedBadge {
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #5b4a70;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin: 20px;
+  }
+
+  .container {
+    padding: 25px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .timer {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .timeBox {
+    min-width: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeBox {
+    min-width: 60px;
+    padding: 10px 6px;
+  }
+
+  .timeBox strong {
+    font-size: 25px;
+  }
+}

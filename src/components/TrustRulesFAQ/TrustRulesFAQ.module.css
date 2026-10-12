@@ -1,0 +1,196 @@
+.section {
+  margin: 50px 6%;
+  padding: 20px 0 50px;
+}
+
+/* Trust */
+
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px;
+  margin-bottom: 55px;
+  background: #f8f5ff;
+  border: 1px solid #e9defb;
+  border-radius: 16px;
+}
+
+.trustIcon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #713ee0;
+  color: white;
+  font-size: 30px;
+}
+
+.trust span,
+.sectionHeading span {
+  color: #713ee0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.trust h2 {
+  margin: 6px 0;
+  color: #24163f;
+  font-size: 24px;
+}
+
+.trust p {
+  margin: 0;
+  color: #777083;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Rules */
+
+.rules {
+  margin-bottom: 55px;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.sectionHeading h2 {
+  margin: 8px 0 0;
+  color: #24163f;
+  font-size: 30px;
+}
+
+.ruleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.rule {
+  padding: 20px;
+  background: white;
+  border: 1px solid #eee8fa;
+  border-radius: 12px;
+}
+
+.rule svg {
+  margin-bottom: 12px;
+  color: #24a56f;
+}
+
+.rule p {
+  margin: 0;
+  color: #625b70;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* FAQ */
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faqItem {
+  overflow: hidden;
+  border: 1px solid #eee8fa;
+  border-radius: 10px;
+  background: white;
+}
+
+.question {
+  width: 100%;
+  padding: 17px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border: none;
+  background: white;
+  color: #24163f;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.question span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.question span svg {
+  color: #713ee0;
+}
+
+.question > svg {
+  color: #888194;
+  transition: transform 0.2s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 0 20px 18px 48px;
+}
+
+.answer p {
+  margin: 0;
+  color: #777083;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .ruleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    margin: 30px 20px;
+  }
+
+  .trust {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .ruleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading h2 {
+    font-size: 25px;
+  }
+
+  .question {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .answer {
+    padding-left: 20px;
+  }
+}

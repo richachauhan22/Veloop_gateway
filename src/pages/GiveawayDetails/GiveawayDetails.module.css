@@ -1,0 +1,245 @@
+.page {
+  min-height: 80vh;
+  padding: 40px 6%;
+  background: #faf9fc;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  color: #713ee0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detailsCard {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #eee8fa;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(40, 20, 80, 0.07);
+}
+
+.imageSection {
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #f5f0ff;
+}
+
+.imageSection img {
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+}
+
+.content {
+  padding: 45px;
+}
+
+.status {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #e5f8ef;
+  color: #188354;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.content h1 {
+  margin: 15px 0 10px;
+  color: #24163f;
+  font-size: 38px;
+  font-weight: 750;
+}
+
+.description {
+  color: #777083;
+  line-height: 1.6;
+}
+
+.entryBox {
+  margin: 25px 0;
+  padding: 20px;
+  border: 1px solid #e5daf8;
+  border-radius: 12px;
+  background: #f8f5ff;
+}
+
+.entryBox span,
+.entryBox small {
+  display: block;
+  color: #777083;
+  font-size: 12px;
+}
+
+.entryBox strong {
+  display: block;
+  margin: 6px 0;
+  color: #713ee0;
+  font-size: 24px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.infoGrid div {
+  padding: 14px;
+  border: 1px solid #eee8fa;
+  border-radius: 9px;
+}
+
+.infoGrid span {
+  display: block;
+  color: #888194;
+  font-size: 11px;
+}
+
+.infoGrid strong {
+  display: block;
+  margin-top: 5px;
+  color: #33264b;
+  font-size: 13px;
+}
+
+.rules {
+  margin-bottom: 25px;
+}
+
+.rules h3 {
+  margin-bottom: 15px;
+  color: #33264b;
+  font-size: 15px;
+}
+
+.rules h3 svg {
+  color: #713ee0;
+}
+
+.rules p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 8px 0;
+  color: #777083;
+  font-size: 12px;
+}
+
+.rules p svg {
+  color: #24a56f;
+}
+
+.joinButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #713ee0;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.joinButton:hover {
+  background: #5426b7;
+  transform: translateY(-1px);
+}
+
+.notFound {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.notFound button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #713ee0;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 25px 20px;
+  }
+
+  .detailsCard {
+    grid-template-columns: 1fr;
+  }
+
+  .imageSection {
+    min-height: 300px;
+  }
+
+  .content {
+    padding: 30px 22px;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageSection {
+    min-height: 250px;
+  }
+  .successMessage {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #b7ebc6;
+  border-radius: 12px;
+  background: #f0fff4;
+  text-align: center;
+}
+
+.successMessage h3 {
+  margin: 0 0 8px;
+  color: #218838;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.successMessage p {
+  margin: 0;
+  color: #42634b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.successMessage h3 {
+  margin: 0 0 8px;
+  color: #218838;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.successMessage p {
+  margin: 0;
+  color: #42634b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+}

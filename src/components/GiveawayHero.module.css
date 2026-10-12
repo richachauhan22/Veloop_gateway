@@ -1,0 +1,155 @@
+.hero {
+  min-height: 430px;
+  margin: 35px 6%;
+  padding: 55px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #f5f0ff;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 540px;
+  z-index: 1;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 30px;
+  background: #e7dcff;
+  color: #6935c5;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content h1 {
+  margin: 22px 0 15px;
+  color: #20133b;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 800;
+}
+
+.content h1 span {
+  color: #713ee0;
+}
+
+.content p {
+  max-width: 450px;
+  color: #625b70;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.joinButton {
+  margin-top: 18px;
+  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  border-radius: 9px;
+  background: #713ee0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.joinButton:hover {
+  background: #5426b7;
+  transform: translateY(-2px);
+}
+
+.note {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #716982;
+  font-size: 13px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #24ad75;
+}
+
+.visual {
+  width: 40%;
+  min-width: 230px;
+  min-height: 280px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: #e6d9ff;
+}
+
+.giftImage {
+  position: relative;
+  z-index: 1;
+  width: 500px;
+  max-width: 500px;
+  height: 500px;
+  object-fit: contain;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin: 20px;
+    padding: 35px 25px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .note {
+    justify-content: center;
+  }
+
+  .visual {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .circle {
+    width: 210px;
+    height: 210px;
+  }
+
+  .giftImage {
+    height: 220px;
+  }
+}
