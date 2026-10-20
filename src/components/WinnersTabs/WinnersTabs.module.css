@@ -1,165 +1,64 @@
-.section {
-  margin: 50px 6%;
-  padding: 30px 0;
-}
-
-.heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.heading > span {
-  color: #713ee0;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.heading h2 {
-  margin: 9px 0;
-  color: #24163f;
-  font-size: 32px;
-  font-weight: 750;
-}
-
-.heading p {
-  margin: 0;
-  color: #777083;
-  font-size: 14px;
-}
+.section { margin: 50px 6%; padding: 30px 0; }
+.heading { margin-bottom: 28px; text-align: center; }
+.heading > span { color: var(--peach); font-size: 11px; font-weight: 800; letter-spacing: 0.18em; }
+.heading h2 { margin: 8px 0; color: var(--text); font-size: 32px; font-weight: 800; }
+.heading p { margin: 0; color: var(--muted); font-size: 14px; }
 
 .tabs {
   max-width: 500px;
-  margin: 0 auto 30px;
+  margin: 0 auto 26px;
   padding: 5px;
   display: flex;
-  background: #f3eff9;
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #1b1318;
 }
 
-.tabs button {
-  flex: 1;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 7px;
-  background: transparent;
-  color: #777083;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.tabs button.activeTab {
-  background: white;
-  color: #713ee0;
-  box-shadow: 0 2px 8px rgba(40, 20, 80, 0.08);
-}
+.tabs button { flex: 1; padding: 11px 15px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease; }
+.tabs button.activeTab { background: linear-gradient(120deg, #ffc5a6, #ff9b7e); color: #351c17; box-shadow: 0 4px 14px rgba(255, 143, 119, 0.17); }
 
 .currentBox {
   max-width: 700px;
   margin: auto;
-  padding: 40px 25px;
+  padding: 38px 24px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: radial-gradient(ellipse at 50% 0, rgba(255, 184, 153, 0.1), transparent 65%), var(--surface);
   text-align: center;
-  background: #f8f5ff;
-  border: 1px solid #e9defb;
-  border-radius: 15px;
+  animation: reveal 300ms ease both;
 }
 
-.iconBox {
-  width: 65px;
-  height: 65px;
-  margin: 0 auto 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #e8dcff;
-  color: #713ee0;
-  font-size: 25px;
-}
-
-.currentBox h3 {
-  margin-bottom: 10px;
-  color: #24163f;
-  font-size: 18px;
-}
-
-.currentBox p {
-  max-width: 500px;
-  margin: auto;
-  color: #777083;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.winnerGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
+.iconBox { width: 62px; height: 62px; margin: 0 auto 17px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 184, 153, 0.25); border-radius: 50%; background: var(--peach-soft); color: var(--peach); font-size: 23px; }
+.currentBox h3 { margin: 0 0 9px; color: var(--text); font-size: 17px; }
+.currentBox p { max-width: 500px; margin: auto; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.winnerGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; animation: reveal 300ms ease both; }
 
 .winnerCard {
-  padding: 22px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  background: white;
-  border: 1px solid #eee8fa;
-  border-radius: 13px;
-  box-shadow: 0 4px 15px rgba(40, 20, 80, 0.04);
+  gap: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  transition: border-color 180ms ease, transform 180ms ease;
 }
 
-.prizeIcon {
-  width: 52px;
-  height: 52px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 11px;
-  background: #f1eaff;
-  color: #713ee0;
-  font-size: 20px;
-}
+.winnerCard:hover { border-color: rgba(255, 184, 153, 0.35); transform: translateY(-3px); }
+.prizeIcon { width: 50px; height: 50px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 184, 153, 0.17); border-radius: 12px; background: var(--peach-soft); color: var(--peach); font-size: 19px; }
+.winnerCard span { color: var(--peach); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; }
+.winnerCard h3 { margin: 4px 0; color: var(--text); font-size: 16px; }
+.winnerCard p { margin: 0 0 3px; color: #e6d1c8; font-size: 12px; }
+.winnerCard small { color: #aa8d83; font-size: 10px; }
 
-.winnerCard span {
-  color: #713ee0;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.winnerCard h3 {
-  margin: 4px 0;
-  color: #24163f;
-  font-size: 17px;
-}
-
-.winnerCard p {
-  margin: 0 0 3px;
-  color: #5f566c;
-  font-size: 13px;
-}
-
-.winnerCard small {
-  color: #9991a5;
-  font-size: 10px;
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 650px) {
-  .section {
-    margin: 30px 20px;
-  }
-
-  .tabs {
-    width: 100%;
-  }
-
-  .winnerGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .winnerCard {
-    padding: 18px;
-  }
+  .section { margin: 30px 20px; }
+  .tabs { width: 100%; }
+  .winnerGrid { grid-template-columns: 1fr; }
+  .winnerCard { padding: 17px; }
 }

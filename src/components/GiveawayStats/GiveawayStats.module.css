@@ -5,64 +5,59 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .statCard {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 25px;
-  background: #ffffff;
-  border: 1px solid #eee8fa;
-  border-radius: 14px;
-  box-shadow: 0 5px 20px rgba(40, 20, 80, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 17px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(255, 184, 153, 0.075), transparent 70%), var(--surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(40, 20, 80, 0.09);
+  border-color: rgba(255, 184, 153, 0.34);
+  box-shadow: 0 15px 36px rgba(0, 0, 0, 0.22);
+  transform: translateY(-5px);
 }
 
 .iconBox {
-  width: 55px;
-  height: 55px;
+  width: 52px;
+  height: 52px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: #f1eaff;
-  color: #713ee0;
-  font-size: 23px;
+  border: 1px solid rgba(255, 184, 153, 0.18);
+  border-radius: 14px;
+  background: var(--peach-soft);
+  color: var(--peach);
+  font-size: 21px;
 }
 
 .statCard h2 {
-  margin: 0 0 5px;
-  color: #24163f;
-  font-size: 28px;
-  font-weight: 750;
+  margin: 0 0 3px;
+  color: #fff0e7;
+  font-size: 27px;
+  font-weight: 800;
 }
 
 .statCard p {
   margin: 0;
-  color: #777083;
-  font-size: 14px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 @media (max-width: 768px) {
-  .statsSection {
-    margin: 0 20px;
-  }
-
-  .statsGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .statCard {
-    padding: 18px;
-  }
+  .statsSection { margin: 0 20px; }
+  .statsGrid { grid-template-columns: 1fr; gap: 12px; }
+  .statCard { padding: 17px; }
 }

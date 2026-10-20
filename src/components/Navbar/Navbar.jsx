@@ -16,10 +16,10 @@ function Navbar(){
                <a href="#how-it-works">How It Works</a>
             </div>
 
-            <button className={styles.loginButton}>
+            <Link to="/login" className={styles.loginButton}>
                 <FaUserCircle/>
                 LOGIN
-                </button>
+            </Link>
         </nav>
      );
     }

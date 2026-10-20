@@ -1,206 +1,56 @@
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-
+  z-index: 10000;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 20px;
-
-  background: rgba(20, 15, 35, 0.6);
+  background: rgba(11, 7, 10, 0.78);
+  backdrop-filter: blur(7px);
+  animation: fadeIn 180ms ease both;
 }
 
 .modal {
   position: relative;
-
   width: 100%;
   max-width: 480px;
-
-  padding: 32px;
-
-  background: #ffffff;
+  padding: 31px;
+  border: 1px solid rgba(255, 184, 153, 0.22);
   border-radius: 20px;
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-
-  animation: modalIn 0.25s ease;
+  background: radial-gradient(ellipse at 50% 0, rgba(255, 184, 153, 0.1), transparent 60%), #21171e;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  animation: modalIn 250ms ease both;
 }
 
-.closeButton {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+.closeButton { position: absolute; top: 14px; right: 14px; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 50%; background: var(--surface-raised); color: var(--muted); cursor: pointer; transition: background 180ms ease, color 180ms ease; }
+.closeButton:hover { background: var(--peach-soft); color: var(--peach); }
+.icon { width: 58px; height: 58px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 184, 153, 0.27); border-radius: 50%; background: var(--peach-soft); color: var(--peach); font-size: 22px; }
+.modal h2 { margin: 0; color: var(--text); text-align: center; font-size: 22px; }
+.subtitle { margin: 8px 0 22px; color: var(--muted); text-align: center; font-size: 13px; }
 
-  width: 36px;
-  height: 36px;
+.prizeBox { padding: 14px; display: flex; align-items: center; gap: 15px; border: 1px solid var(--border); border-radius: 13px; background: rgba(255, 184, 153, 0.045); }
+.prizeBox img { width: 70px; height: 70px; flex-shrink: 0; object-fit: contain; border-radius: 10px; background: #302229; }
+.prizeBox h3 { margin: 0 0 6px; color: var(--text); font-size: 16px; }
+.prizeBox p { margin: 0; color: var(--muted); font-size: 12px; }
+.prizeBox p strong { color: var(--peach); }
+.info { margin: 17px 0; padding: 11px; display: flex; align-items: center; gap: 9px; border-radius: 9px; background: rgba(255, 184, 153, 0.08); color: #dfc9bf; font-size: 12px; }
+.info svg { flex-shrink: 0; color: var(--peach); }
+.actions { display: flex; gap: 11px; }
 
-  border: none;
-  border-radius: 50%;
+.cancelButton, .confirmButton { flex: 1; padding: 11px 15px; border-radius: 9px; font-size: 13px; font-weight: 700; cursor: pointer; transition: transform 180ms ease, background 180ms ease; }
+.cancelButton { border: 1px solid var(--border); background: var(--surface-raised); color: #e6d3cb; }
+.confirmButton { border: 0; background: linear-gradient(115deg, #ffc5a6, #ff9078); color: #321a17; }
+.cancelButton:hover, .confirmButton:hover { transform: translateY(-2px); }
 
-  background: #f5f5f5;
-  color: #555;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.closeButton:hover {
-  background: #eeeeee;
-}
-
-.icon {
-  width: 60px;
-  height: 60px;
-
-  margin: 0 auto 16px;
-
-  border-radius: 50%;
-
-  background: #f1eaff;
-  color: #6c35d9;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 23px;
-}
-
-.modal h2 {
-  margin: 0;
-  text-align: center;
-
-  color: #222;
-  font-size: 23px;
-}
-
-.subtitle {
-  margin: 8px 0 24px;
-
-  text-align: center;
-  color: #777;
-  font-size: 18px;
-}
-
-.prizeBox {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  padding: 16px;
-
-  border: 1px solid #eeeeee;
-  border-radius: 14px;
-
-  background: #fafafa;
-}
-
-.prizeBox img {
-  width: 75px;
-  height: 75px;
-
-  object-fit: contain;
-
-  border-radius: 10px;
-  background: #ffffff;
-}
-
-.prizeBox h3 {
-  margin: 0 0 8px;
-
-  font-size: 20px;
-  color: #222;
-}
-
-.prizeBox p {
-  margin: 0;
-
-  font-size: 18px;
-  color: #666;
-}
-
-.info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  margin: 20px 0;
-
-  padding: 12px;
-
-  border-radius: 10px;
-
-  background: #f8f5ff;
-
-  color: #555;
-  font-size: 15px;
-}
-
-.info svg {
-  color: #6c35d9;
-  flex-shrink: 0;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-}
-
-.cancelButton,
-.confirmButton {
-  flex: 1;
-
-  padding: 12px 16px;
-
-  border-radius: 9px;
-
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.cancelButton {
-  border: 1px solid #dddddd;
-  background: #ffffff;
-  color: #444;
-}
-
-.confirmButton {
-  border: none;
-  background: #6c35d9;
-  color: #ffffff;
-}
-
-.confirmButton:hover {
-  background: #5425b5;
-}
-
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes modalIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px) scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @media (max-width: 500px) {
-  .modal {
-    padding: 24px 18px;
-  }
-
-  .prizeBox {
-    align-items: flex-start;
-  }
-
-  .actions {
-    flex-direction: column;
-  }
+  .modal { padding: 26px 18px; }
+  .prizeBox { align-items: flex-start; }
+  .actions { flex-direction: column; }
 }

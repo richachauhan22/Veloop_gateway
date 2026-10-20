@@ -1,0 +1,65 @@
+.registerPage {
+  position: relative;
+  min-height: calc(100vh - 78px);
+  padding: 42px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 12%, rgba(255, 143, 119, 0.16), transparent 27rem), radial-gradient(circle at 12% 88%, rgba(188, 102, 89, 0.12), transparent 25rem), #150f14;
+  color: var(--text);
+}
+
+.registerCard { width: 100%; max-width: 470px; padding: 36px; border: 1px solid rgba(255, 184, 153, 0.2); border-radius: 20px; background: rgba(33, 23, 30, 0.94); box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36); animation: cardIn 450ms ease both; }
+.brand { display: inline-block; margin-bottom: 28px; color: var(--text); font-size: 20px; font-weight: 850; letter-spacing: 0.06em; text-decoration: none; }
+.brand span { color: var(--peach); }
+.eyebrow { margin: 0 0 9px; color: var(--peach); font-size: 10px; font-weight: 800; letter-spacing: 0.17em; }
+.registerCard h1 { margin: 0 0 9px; color: var(--text); font-size: clamp(26px, 5vw, 34px); font-weight: 800; letter-spacing: -0.03em; }
+.subtitle { margin: 0 0 26px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.formGroup { margin-bottom: 16px; }
+.formGroup label { display: block; margin-bottom: 7px; color: #f0ded6; font-size: 12px; font-weight: 650; }
+
+.formGroup input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid rgba(255, 184, 153, 0.16);
+  border-radius: 9px;
+  outline: none;
+  background: #181117;
+  color: var(--text);
+  font-size: 13px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.formGroup input::placeholder { color: #927d78; }
+.formGroup input:focus { border-color: #ffad8c; box-shadow: 0 0 0 3px rgba(255, 173, 140, 0.1); }
+.error { margin: 0 0 14px; color: #ff9c99; font-size: 12px; }
+
+.submitButton {
+  width: 100%;
+  margin-top: 5px;
+  padding: 13px;
+  border: 0;
+  border-radius: 9px;
+  background: linear-gradient(115deg, #ffc5a6, #ff9078);
+  color: #321a17;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.submitButton:hover { box-shadow: 0 8px 24px rgba(255, 143, 119, 0.22); transform: translateY(-2px); }
+.loginText { margin: 22px 0 17px; color: var(--muted); font-size: 12px; text-align: center; }
+.loginText a, .backLink { color: var(--peach); font-weight: 700; text-decoration: none; }
+.loginText a:hover, .backLink:hover { text-decoration: underline; }
+.backLink { display: block; font-size: 12px; text-align: center; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .registerCard { padding: 27px 20px; }
+}

@@ -11,6 +11,8 @@ import WinnerSlider from "./components/WinnerSlider/WinnerSlider";
 import WinnersTabs from "./components/WinnersTabs/WinnersTabs";
 import TrustRulesFAQ from "./components/TrustRulesFAQ/TrustRulesFAQ";
 import GiveawayDetails from "./pages/GiveawayDetails/GiveawayDetails";
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login";
 
 function Home() {
   return (
@@ -24,7 +26,7 @@ function Home() {
       <WinnersTabs />
       <TrustRulesFAQ />
 
-      <main style={{ padding: "20px 3%", backgroundColor: "pink", textAlign: "center" ,fontSize:"15px"}}>
+      <main className="siteFooter">
         <h6>VELOOP GIVEAWAYS</h6>
       </main>
     </>
@@ -37,6 +39,8 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/prize/:id" element={<GiveawayDetails />} />
       </Routes>

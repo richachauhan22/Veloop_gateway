@@ -1,104 +1,68 @@
-.section {
-  margin: 20px 6%;
-}
+.section { margin: 24px 6%; }
 
 .container {
-  padding: 30px 35px;
+  position: relative;
+  padding: 29px 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  background: #24163f;
-  border-radius: 16px;
+  gap: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 199, 170, 0.22);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 85% 50%, rgba(255, 145, 116, 0.2), transparent 35%), linear-gradient(115deg, #382128, #281a21);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-.left {
-  color: white;
+.container::after {
+  position: absolute;
+  top: -75px;
+  right: 18%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 208, 184, 0.12);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
 }
 
-.label {
-  color: #c8b0ff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.left h2 {
-  margin: 8px 0;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.left p {
-  margin: 0;
-  color: #cfc7dc;
-  font-size: 13px;
-}
-
-.timer {
-  display: flex;
-  gap: 10px;
-}
+.left { position: relative; z-index: 1; color: var(--text); }
+.label { color: var(--peach); font-size: 10px; font-weight: 800; letter-spacing: 0.17em; }
+.left h2 { margin: 7px 0; color: #fff0e7; font-size: 25px; font-weight: 800; }
+.left p { margin: 0; color: #d2b8ae; font-size: 13px; }
+.timer { position: relative; z-index: 1; display: flex; gap: 10px; }
 
 .timeBox {
-  min-width: 75px;
-  padding: 12px 10px;
+  min-width: 70px;
+  padding: 10px 9px;
+  border: 1px solid rgba(255, 199, 170, 0.18);
+  border-radius: 10px;
+  background: rgba(17, 12, 16, 0.42);
   text-align: center;
-  background: #342451;
-  border: 1px solid #49346b;
-  border-radius: 9px;
+  animation: timerGlow 3s ease-in-out infinite;
 }
 
-.timeBox strong {
-  display: block;
-  color: white;
-  font-size: 25px;
-  font-weight: 700;
-}
+.timeBox:nth-child(2) { animation-delay: 250ms; }
+.timeBox:nth-child(3) { animation-delay: 500ms; }
+.timeBox:nth-child(4) { animation-delay: 750ms; }
+.timeBox strong { display: block; color: #ffd0b8; font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.timeBox span { color: #c6aaa0; font-size: 10px; }
+.endedBadge { position: relative; z-index: 1; padding: 12px 22px; border: 1px solid rgba(255, 184, 153, 0.3); border-radius: 9px; background: rgba(255, 184, 153, 0.13); color: #ffd0b8; font-size: 14px; font-weight: 800; }
 
-.timeBox span {
-  color: #bdb1d0;
-  font-size: 10px;
-}
-
-.endedBadge {
-  padding: 12px 22px;
-  border-radius: 8px;
-  background: #5b4a70;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
+@keyframes timerGlow {
+  0%, 100% { border-color: rgba(255, 199, 170, 0.18); }
+  50% { border-color: rgba(255, 199, 170, 0.4); }
 }
 
 @media (max-width: 768px) {
-  .section {
-    margin: 20px;
-  }
-
-  .container {
-    padding: 25px 20px;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .timer {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .timeBox {
-    min-width: 65px;
-  }
+  .section { margin: 20px; }
+  .container { padding: 24px 19px; flex-direction: column; text-align: center; }
+  .timer { justify-content: center; flex-wrap: wrap; }
+  .timeBox { min-width: 62px; }
 }
 
 @media (max-width: 480px) {
-  .timeBox {
-    min-width: 60px;
-    padding: 10px 6px;
-  }
-
-  .timeBox strong {
-    font-size: 25px;
-  }
+  .timeBox { min-width: 58px; padding: 9px 6px; }
+  .timeBox strong { font-size: 21px; }
+  .left h2 { font-size: 21px; }
 }
